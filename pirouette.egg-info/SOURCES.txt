@@ -1,0 +1,11 @@
+MANIFEST.in
+setup.cfg
+setup.py
+pirouette/__init__.py
+pirouette/pirouette.py
+pirouette.egg-info/PKG-INFO
+pirouette.egg-info/SOURCES.txt
+pirouette.egg-info/dependency_links.txt
+pirouette.egg-info/not-zip-safe
+pirouette.egg-info/top_level.txt
+tests/__init__.py

@@ -1,0 +1,55 @@
+Metadata-Version: 1.1
+Name: pirouette
+Version: 0.0.0
+Summary: loading animation for cli apps
+Home-page: https://github.com/walidsa3d/pirouette
+Author: Walid Saad
+Author-email: walid.sa3d@gmail.com
+License: MIT
+Description: pirouette
+        =========
+        
+        |Build| |downloads| |license| |version| |PEP8|
+        
+        loading animation for cli apps
+        
+        Install (automatic)
+        -------------------
+        
+        ::
+        
+            $ pip install pirouette
+        
+        Install (manual)
+        ----------------
+        
+        ::
+        
+            $ git clone 
+            $ cd pirouette
+            $ python setup.py install
+        
+        Usage
+        -----
+        
+        ::
+        
+        Demo
+        ~~~~
+        
+        License
+        -------
+        
+        .. |Build| image:: https://travis-ci.org/walidsa3d/pirouette.svg?branch=master
+        .. |downloads| image:: https://img.shields.io/pypi/dm/pirouette.svg
+        .. |license| image:: https://img.shields.io/pypi/l/pirouette.svg
+        .. |version| image:: https://img.shields.io/pypi/v/pirouette.svg
+        .. |PEP8| image:: https://img.shields.io/badge/code%20style-pep8-orange.svg
+           :target: https://www.python.org/dev/peps/pep-0008/
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python :: 2
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
