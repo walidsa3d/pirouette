@@ -18,9 +18,17 @@ $ cd pirouette
 $ python setup.py install
 ```
 ## Usage
-```
-```
-### Demo
+```python
+>> from pirouette.core import Spinner
 
+>> Spinner().spin()
+⠏
+>> Spinner(color='red').spin()
+⠏
+>> Spinner(color='red', shape='clock').spin()
+🕐
+
+```
 
 ## License
+MIT
