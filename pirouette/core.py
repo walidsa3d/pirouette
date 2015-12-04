@@ -9,44 +9,51 @@ import time
 import os
 import itertools
 from termcolor import colored
+import sys
 
 frames = {
     'tetris': ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'],
-    'swords': ['-', '/', '\\'],
-    'arrows': ['>', '>>', '>>>', ''],
-    'circles': ['.', 'o', 'O', '°', 'O', 'o', '.'],
+    'stick': ['-', '/', '\\'],
+    #'pointer': ['>', '>>', '>>>'],
+    'circle': ['.', 'o', 'O', '°', 'O', 'o', '.'],
     'hourglass': ['⏳', '⌛'],
-    'moons': ['◐', '◓', '◑', '◒'],
+    'moon': ['◐', '◓', '◑', '◒'],
     'stack': ['▁', '▃', '▄', '▅', '▆', '▇', '█', '▇', '▆', '▅', '▄', '▃', '▁'],
     'clock': ['🕛', '🕐', '🕑', '🕒', '🕓', '🕔', '🕕', '🕖', '🕗', '🕘', '🕙', '🕚'],
     'box': ['■', '□', '▪', '▫'],
-    'arrows': ['←', '↖', '↑', '↗', '→', '↘', '↓', '↙'],
-    'dots': ['.', '..', '...', '....'],
-    'bullets': ['◎ ◎ ◎', '◉ ◎ ◎', '◉ ◉ ◎', '◉ ◉ ◉']
+    'arrow': ['←', '↖', '↑', '↗', '→', '↘', '↓', '↙'],
+    #'dot': ['.', '..', '...', '....'],
+    'bullet': ['◎ ◎ ◎', '◉ ◎ ◎', '◉ ◉ ◎', '◉ ◉ ◉']
 }
 
 
 class Spinner:
 
-    def __init__(self, duration=5, color='cyan', shape='tetris'):
-        self.shape = shape
-        self.color = color
-        self.duration = duration
+    def __init__(self):
+        pass
 
     def cursor_on(self):
+        '''turn the cursor on'''
         os.system('setterm -cursor on')
 
     def cursor_off(self):
+        '''turn the cursor off'''
         os.system('setterm -cursor off')
 
-    def spin(self):
-        shape = frames[self.shape]
+    def spin(self, duration=5, color='cyan', shape='tetris'):
+        shape = frames[shape]
         frame_gen = itertools.cycle(shape)
         self.cursor_off()
-        for _ in xrange(self.duration*10):
-            frame = colored(next(frame_gen), self.color)
-            sys.stdout.write(frame)
-            sys.stdout.flush()
-            time.sleep(0.1)
-            sys.stdout.write('\b')
+        try:
+            for _ in xrange(duration*10):
+                frame = next(frame_gen)
+                frame = colored(frame, color)
+                l = len(frame)
+                sys.stdout.write(frame)
+                sys.stdout.flush()
+                time.sleep(0.1)
+                sys.stdout.write('\b'*l)
+        except KeyboardInterrupt:
+            self.cursor_on()
+            sys.exit(0)
         self.cursor_on()

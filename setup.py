@@ -10,7 +10,7 @@ except ImportError:
 
 setup(
     name="pirouette",
-    version="0.1.0",
+    version="0.2.0",
     description="loading animation for cli apps",
     long_description=read_md('README.md'),
     author="Walid Saad",
@@ -21,6 +21,7 @@ setup(
     test_suite="tests",
     license="MIT",
     zip_safe=False,
+    install_requires=['termcolor'],
     classifiers=[
         # 'Development Status :: 1 - Planning',
         # 'Development Status :: 2 - Pre-Alpha',

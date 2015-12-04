@@ -23,9 +23,9 @@ $ python setup.py install
 
 >> Spinner().spin()
 ⠏
->> Spinner(color='red').spin()
+>> Spinner().spin(color='red')
 ⠏
->> Spinner(color='red', shape='clock').spin()
+>> Spinner().spin(color='yellow', shape='clock')
 🕐
 
 ```
